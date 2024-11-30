@@ -1,109 +1,216 @@
-*{
-    padding: 0%;
-    margin: 0%;
-    font-family: 'outfit';
-
+:root {
+    --rose800: rgb(122, 40, 78);
+    --rose50: rgb(255, 247, 251);
+    --stone900: rgb(49, 46, 44);
+    --stone600: rgb(95, 86, 77);
+    --stone150: rgb(227, 221, 215);
+    --stone100: rgb(243, 229, 215);
+    --brown800: rgb(133, 70, 50);
+    --white: rgb(255, 255, 255);
+    --fontPrimary: "Young Serif";
+    --fontSecundary: "Outfit";  
 }
-@font-face { font-family: 'young-serif'; 
-    src: url('assets/fonts/young-serif/YoungSerif-Regular.ttf') format('truetype'); 
+
+
+/* fuentes */
+
+@font-face {
+    font-family: "Young Serif";
+    src: url(../assets/fonts/YoungSerif-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
 }
 
-@font-face { font-family: 'outfit'; 
-    src: url('assets/fonts/outfit/Outfit-VariableFont_wght.ttf') format('truetype');
- }
-
-:root{
-    --White: hsl(0, 0%, 100%);
-    --Stone100: hsl(30, 54%, 90%);
-    --Stone150: hsl(30, 18%, 87%);
-    --Stone600: hsl(30, 10%, 34%);
-    --Stone900: hsl(24, 5%, 18%);
-    --Brown800: hsl(14, 45%, 36%);
-    --Rose800: hsl(332, 51%, 32%);
-    --Rose50: hsl(330, 100%, 98%);
-    
+@font-face {
+    font-family: "Outfit";
+    src: url(../assets/fonts/Outfit-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
 }
-body{
-    height: 100vh;
-    width: 100vw;
+
+@font-face {
+    font-family: "Outfit";
+    src: url(../assets/fonts/Outfit-SemiBold.ttf);
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Outfit";
+    src: url(../assets/fonts/Outfit-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* estilos generales */
+
+body {
+    margin: 0;
+    font-family: var(--fontSecundary);
+    color: var(--stone600);
+    line-height: 150%;
+    background: var(--stone100);
+}
+
+img {
+    vertical-align: bottom;
+    inline-size: 100%;
+    aspect-ratio: 16/9;
+    height: auto;
+}
+
+h2,
+h1 {
+    margin: 0;
+    line-height: 100%;
+    font-family: var(--fontPrimary);
+}
+
+p {
+    margin: 0;
+}
+
+ul, 
+ol {
+    padding-inline-start: 1.5rem;
+    margin: 0;
+}
+
+li {
+    padding-inline-start: 1rem;
+    margin-block-end: .5rem;
+}
+
+li span {
+    font-weight: 700;
+}
+
+hr {
+    inline-size: 100%;
+    background: var(--stone150);
+    margin: 0;
+}
+
+/* estilos */
+
+.recipe {
+    background: var(--white);
+    max-inline-size: 38.5rem;
+}
+
+.recipe_body {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2.5rem 2rem;
 }
-main{
-    height: 100vh;
-    width: 48vw;
-    background-color: var(--Rose50);
-    margin-top: 15rem;
+
+.recipe_title{
+    font-weight: 400;
+    font-size: 2rem;
+    color: var(--stone900);
+    margin-block-end: 1.5rem;
 }
-img{
-    margin: 2.8rem 2.8rem 1.55rem 2.8rem;
-    height: 40vh;
-    width: 42.5vw;
+
+.recipe_preparation {
+    padding: 1.5rem;
+    background: var(--rose50);
 }
-section{
-    padding-left: 25px;
-    margin: 18px;
-    
-    
+
+.recipe_titlePreparation {
+    color: var(--rose800);
+    font-weight: 600;
+    line-height: 100%;
+    font-size: 1.25rem;
+    margin-block-end: 1rem;
 }
-h1{
-    font-size: 2.5em;
-    font-family:'young-serif';
-    font-weight: 100;
-    margin: 0px 2.5rem 1.1rem 2.5rem;
+
+.recipeItemPreparation::marker {
+    color: var(--rose800);
 }
-h2{
-    color: var(--Brown800);
-    font-family: 'young-serif';
+
+.recipeItemIngredients::marker {
+    color: var(--brown800);
 }
-p{
-    font-size: 16px;
-    line-height: 1.4rem;
-    margin: 0px 2.5rem 1.1rem 2.5rem;
+
+.recipeItemInstructions::marker {
+    color: var(--brown800);
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: var(--fontSecundary);
 }
-.preparação{
-    margin: 3.5rem 3.5rem 3.2rem 3.5rem;
-    line-height: 2.1rem;
+
+.recipe_subTitle {
+    color: var(--brown800);
+    font-size: 1.75rem;
+    margin-block-end: 1.5rem;
 }
-.preparação>ul{
-    list-style-position: outside; 
-    padding-left: 15px; 
-    text-indent: 11px;
+
+.table {
+    inline-size: 100%;
+    margin-block-start: 1.5rem;
 }
-.preparação>ul>h2{
-    font-size: 1.3em;
-    font-weight: 500;
-    text-indent: 0%;
-    transform: translateX(-25px);
-    font-family: 'outfit';
+
+.table tr {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-inline: 2rem;
+    padding-block: .75rem;
+    border-block-end: 1px solid var(--stone150);
 }
-.iguais{
-    list-style-position: outside; 
-    padding-left: 17px; 
-    margin: 1.5rem 2.8rem 0rem 2.7rem;
-    border-bottom: 2px solid hsl(30, 10%, 34%);
-    padding-bottom: 24px;
+
+.table tr:first-child {
+    padding-block-start: 0;
 }
-#descer{
-    margin: 2.5rem 2.8rem 0 3rem;
-    
+
+.table tr:last-child {
+    padding-block-end: 0;
+    border: none;
 }
-.iguais>h2{
-    font-size: 1.8em;
-    margin-bottom: 15px;
-    font-weight: 500;
-    transform: translateX(-25px);
-   
+
+
+.table td {
+    flex: 1;
+    padding: 0;
 }
-.iguais>ul>li{
-    margin-bottom: 12px;
-    padding-left: 10px; 
-    
+
+.table_value {
+    font-weight: 700;
+    color: var(--brown800);
 }
-.iguais>ol>li{
-    margin-bottom: 9px;
-    padding-left: 14px; 
-    line-height: 1.49rem;
-    font-size: 15px;
+
+/* media queries */
+@media (width > 600px) {
+    body {
+        display: flex;
+        justify-content: center;
+        padding-block: 8rem;
+    }
+
+    .recipe {
+        padding: 2.5rem;
+        box-sizing: border-box;
+        border-radius: 1.5rem;
+    }
+
+    .recipe_img {
+        border-radius: .75rem;
+        overflow: hidden;
+    }
+
+    img {
+        max-block-size: 18.75rem;
+    }
+
+    .recipe_body {
+        padding: 0;
+        margin-block-start: 2.5rem;
+    }
+}
+
+@media (width > 1200px) {
+    .recipe {
+        max-inline-size: 46rem;
+    }
 }
