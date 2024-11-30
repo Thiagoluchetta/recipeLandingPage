@@ -1,11 +1,19 @@
 *{
     padding: 0%;
     margin: 0%;
+    font-family: 'outfit';
 
 }
+@font-face { font-family: 'young-serif'; 
+    src: url('assets/fonts/young-serif/YoungSerif-Regular.ttf') format('truetype'); 
+}
+
+@font-face { font-family: 'outfit'; 
+    src: url('assets/fonts/outfit/Outfit-VariableFont_wght.ttf') format('truetype');
+ }
+
 :root{
     --White: hsl(0, 0%, 100%);
-
     --Stone100: hsl(30, 54%, 90%);
     --Stone150: hsl(30, 18%, 87%);
     --Stone600: hsl(30, 10%, 34%);
@@ -18,14 +26,84 @@
 body{
     height: 100vh;
     width: 100vw;
-    background-color: var(--Stone100);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 main{
-    height: 90vh;
-    width: 90vw;
-    background-color: white;
-    padding: 15rem;
+    height: 100vh;
+    width: 48vw;
+    background-color: var(--Rose50);
+    margin-top: 15rem;
+}
+img{
+    margin: 2.8rem 2.8rem 1.55rem 2.8rem;
+    height: 40vh;
+    width: 42.5vw;
+}
+section{
+    padding-left: 25px;
+    margin: 18px;
+    
+    
+}
+h1{
+    font-size: 2.5em;
+    font-family:'young-serif';
+    font-weight: 100;
+    margin: 0px 2.5rem 1.1rem 2.5rem;
+}
+h2{
+    color: var(--Brown800);
+    font-family: 'young-serif';
+}
+p{
+    font-size: 16px;
+    line-height: 1.4rem;
+    margin: 0px 2.5rem 1.1rem 2.5rem;
+}
+.preparação{
+    margin: 3.5rem 3.5rem 3.2rem 3.5rem;
+    line-height: 2.1rem;
+}
+.preparação>ul{
+    list-style-position: outside; 
+    padding-left: 15px; 
+    text-indent: 11px;
+}
+.preparação>ul>h2{
+    font-size: 1.3em;
+    font-weight: 500;
+    text-indent: 0%;
+    transform: translateX(-25px);
+    font-family: 'outfit';
+}
+.iguais{
+    list-style-position: outside; 
+    padding-left: 17px; 
+    margin: 1.5rem 2.8rem 0rem 2.7rem;
+    border-bottom: 2px solid hsl(30, 10%, 34%);
+    padding-bottom: 24px;
+}
+#descer{
+    margin: 2.5rem 2.8rem 0 3rem;
+    
+}
+.iguais>h2{
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    font-weight: 500;
+    transform: translateX(-25px);
+   
+}
+.iguais>ul>li{
+    margin-bottom: 12px;
+    padding-left: 10px; 
+    
+}
+.iguais>ol>li{
+    margin-bottom: 9px;
+    padding-left: 14px; 
+    line-height: 1.49rem;
+    font-size: 15px;
 }
